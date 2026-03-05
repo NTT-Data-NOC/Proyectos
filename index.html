@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Templo Cabalístico De Amor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rojo-pasion: #e63946;
+            --rojo-oscuro: #b71c1c;
+            --negro-mistico: #0f0f1a;
+            --violeta-magico: #7b2cbf;
+            --violeta-claro: #9d4edd;
+            --dorado: #ffd166;
+            --gris-claro: #f5f5f5;
+            --sombra: rgba(123, 44, 191, 0.3);
+            --header-height: 100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--negro-mistico);
+            color: var(--gris-claro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(to bottom, rgba(15, 15, 26, 0.95), rgba(15, 15, 26, 0.8));
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--violeta-magico);
+            box-shadow: 0 5px 20px rgba(123, 44, 191, 0.5);
+            height: auto;
+            min-height: var(--header-height);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            color: var(--rojo-pasion);
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 0 10px var(--violeta-magico));
+        }
+
+        .logo-text h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, var(--rojo-pasion), var(--violeta-magico));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(123, 44, 191, 0.5);
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--gris-claro);
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--gris-claro);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: var(--dorado);
+            background-color: rgba(123, 44, 191, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Ajuste para el hero (evitar que el header lo cubra) */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(15, 15, 26, 0.8), rgba(15, 15, 26, 0.9)), url('img/fondo-galactico.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+            padding: calc(var(--header-height) + 30px) 0 60px;
+            margin-top: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(123, 44, 191, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(230, 57, 70, 0.2) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            padding-right: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(230, 57, 70, 0.7);
+            animation: fadeInUp 1.5s ease-out;
+            line-height: 1.2;
+        }
+
+        .hero-content h2 span {
+            color: var(--dorado);
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            display: block;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.5s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--rojo-pasion), var(--violeta-magico));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px var(--sombra);
+            animation: pulse 2s infinite 1s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--sombra);
+            letter-spacing: 3px;
+        }
+
+        /* Video Slider */
+        .video-slider {
+            position: relative;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--violeta-magico);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .video-container video.active {
+            display: block;
+        }
+
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .video-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-dot.active {
+            background-color: var(--rojo-pasion);
+            transform: scale(1.2);
+        }
+
+        .video-dot:hover {
+            background-color: var(--violeta-claro);
+        }
+
+        /* Productos Section */
+        .products {
+            padding: 80px 0;
+            background-color: rgba(15, 15, 26, 0.9);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, var(--violeta-magico), var(--rojo-pasion));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(to right, var(--violeta-magico), var(--rojo-pasion));
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, rgba(123, 44, 191, 0.1), rgba(15, 15, 26, 0.7));
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(123, 44, 191, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .product-card:hover::before {
+            left: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(123, 44, 191, 0.4);
+            border-color: var(--violeta-claro);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid var(--violeta-magico);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--gris-claro);
+        }
+
+        .product-description {
+            color: #ddd;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .product-description::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .product-description::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .product-description::-webkit-scrollbar-thumb {
+            background: var(--violeta-magico);
+            border-radius: 5px;
+        }
+
+        .product-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--violeta-magico), var(--rojo-pasion));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .product-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(123, 44, 191, 0.5);
+        }
+
+        /* Testimonios Section */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(rgba(15, 15, 26, 0.9), rgba(15, 15, 26, 0.95));
+        }
+
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial {
+            background: rgba(123, 44, 191, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 15px;
+            border-left: 5px solid var(--rojo-pasion);
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--violeta-magico), var(--rojo-pasion));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: var(--dorado);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: var(--rojo-pasion);
+            transform: scale(1.2);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(to right, #25D366, #128C7E);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse-green 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--rojo-oscuro), var(--negro-mistico));
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .footer-logo h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, var(--dorado), var(--violeta-claro));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-contact p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact a {
+            color: var(--dorado);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--rojo-pasion);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+
+        /* Animaciones */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            :root {
+                --header-height: 120px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .hero-content {
+                text-align: center;
+                padding-right: 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content h2 span {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 140px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.7rem;
+            }
+            
+            nav ul {
+                gap: 10px;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h2 span {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .product-card h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            :root {
+                --header-height: 160px;
+            }
+            
+            .logo-icon {
+                font-size: 2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h2 span {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial {
+                padding: 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-button {
+                width: 55px;
+                height: 55px;
+                font-size: 2rem;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Ajuste para landscape en móviles */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                padding-top: 150px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content h2 span {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <!-- Cambio de icono por un corazón con estrellas (más bonito) -->
+                <div class="logo-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Templo Cabalístico De Amor</h1>
+                    <p>RITUALES & CONJUROS DE AMOR</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section con dos columnas -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h2>Transforma tu destino amoroso con el poder del <span>templo cabalístico</span></h2>
+                <p>Descubre la magia ancestral de la cábala aplicada al amor. Nuestros rituales están diseñados para conectar almas, sanar corazones y abrir caminos afectivos con la energía de las estrellas.</p>
+                <a href="#servicios" class="cta-button">Explora nuestros servicios</a>
+            </div>
+            <div class="video-slider">
+                <div class="video-container" id="videoContainer">
+                    <video class="active" src="img/video1.mp4" muted loop playsinline></video>
+                    <video src="img/video2.mp4" muted loop playsinline></video>
+                    <video src="img/video3.mp4" muted loop playsinline></video>
+                </div>
+                <div class="video-controls" id="videoControls">
+                    <div class="video-dot active" data-index="0"></div>
+                    <div class="video-dot" data-index="1"></div>
+                    <div class="video-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos/Servicios Section -->
+    <section class="products" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios Cabalísticos</h2>
+            </div>
+            <div class="products-grid" id="productos-container">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonios de Éxito</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Después de años de soledad, el amarre de amor cambió mi vida por completo. En solo 3 semanas, la persona que siempre amé me buscó y hoy estamos comprometidos. ¡Gracias Templo Cabalístico De Amor!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>María G.</h4>
+                            <p>Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"El retorno de pareja funcionó increíblemente rápido. Mi esposo había dejado el hogar y en menos de un mes regresó arrepentido. Nuestra relación ahora es más fuerte que nunca."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">C</div>
+                        <div class="author-info">
+                            <h4>Carlos R.</h4>
+                            <p>Medellín, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"La protección espiritual que me realizaron me cambió la vida. Sentía energías negativas a mi alrededor y después del ritual, todo cambió. Ahora tengo paz y prosperidad en mi hogar."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Ana L.</h4>
+                            <p>Cali, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-index="0"></div>
+                    <div class="slider-dot" data-index="1"></div>
+                    <div class="slider-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/573223964971?text=Hola%20Templo%20Cabalístico%20De%20Amor,%20me%20interesa%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Templo Cabalístico De Amor</h3>
+                </div>
+                <div class="footer-contact">
+                    <p>Consulta nuestros servicios personalizados</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+573223964971">+57 322 396 4971</a></p>
+                    <p>Disponible las 24 horas</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573223964971" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Templo Cabalístico De Amor. Todos los derechos reservados. Servicios esotéricos con fines espirituales.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Datos de los productos con imágenes y descripciones ampliadas
+        const productos = [
+            {
+                id: 1,
+                nombre: "Amarre de Amor",
+                descripcion: "Poderoso ritual cabalístico que une dos almas destinadas mediante la energía de los nombres sagrados. Este amarre crea un vínculo inquebrantable basado en el respeto y la atracción mutua. Se realiza con velas, inciensos y la invocación de ángeles del amor. Ideal para parejas que desean fortalecer su relación o para atraer a esa persona especial que sabes que es tu media naranja. El ritual se personaliza con tus datos y los de tu ser amado, trabajando con la cábala para alinear los caminos y eliminar obstáculos.",
+                imagen: "img/amarre-amor.jpeg",
+            },
+            {
+                id: 2,
+                nombre: "Amarre Sexual",
+                descripcion: "Ritual de alta magia sexual que despierta la pasión y el deseo en la pareja. Utilizamos elementos como la miel, el vino tinto y velas rojas, junto con los nombres de los implicados y la energía de los planetas Venus y Marte. Este amarre está diseñado para revitalizar la vida íntima, aumentar la atracción física y crear una conexión profunda a nivel carnal y espiritual. Es perfecto para parejas con rutina o para avivar la llama de un nuevo romance. Se trabaja con la energía del deseo y la seducción, siempre bajo la premisa del libre albedrío.",
+                imagen: "img/amarre-sexual.jpg",
+            },
+            {
+                id: 3,
+                nombre: "Amarre para el Mismo Sexo",
+                descripcion: "Especializado en relaciones entre personas del mismo género, este amarre utiliza la energía de la cábala y la magia inclusiva. Se adapta a las necesidades particulares de cada pareja, trabajando con nombres, fechas de nacimiento y elementos que representan la unión. El ritual busca armonizar las energías masculina y femenina dentro de cada individuo, creando un equilibrio que favorezca el amor y la comprensión mutua. Respetamos todas las orientaciones sexuales y trabajamos con la energía universal del amor sin distinciones.",
+                imagen: "img/amarre-mismo-sexo.jpg",
+            },
+            {
+                id: 4,
+                nombre: "Hechizo de Amor",
+                descripcion: "Hechizo de magia blanca para atraer el amor verdadero a tu vida. Ideal para quienes están solteros y desean encontrar una pareja compatible. Se utilizan pétalos de rosa, canela, miel y la energía de la luna llena. El hechizo abre los caminos del corazón y te prepara para recibir el amor en todas sus formas. No solo atrae a una persona específica, sino que también mejora tu autoestima y tu capacidad de amar. Incluye una limpieza energética previa para eliminar bloqueos amorosos del pasado.",
+                imagen: "img/hechizo-amor.jpeg",
+            },
+            {
+                id: 5,
+                nombre: "Endulzamiento de Amor",
+                descripcion: "Ritual de endulzamiento para suavizar caracteres, calmar discusiones y restaurar la armonía en la pareja. Se trabaja con miel, azúcar, canela y leche, junto con oraciones específicas de la cábala. Este endulzamiento no es un amarre forzado, sino una manera de que los sentimientos fluyan con dulzura y comprensión. Perfecto para parejas que están pasando por una crisis o para aquellos que desean mejorar la comunicación y el cariño en su relación. Se recomienda realizarlo en luna creciente para potenciar sus efectos.",
+                imagen: "img/endulzamiento.jpg",
+            },
+            {
+                id: 6,
+                nombre: "Retorno de Pareja",
+                descripcion: "Potente ritual para el regreso de esa persona especial que se ha alejado. Trabajamos con la energía del perdón, la reconciliación y la renovación del compromiso. Se utilizan fotografías, velas de color rosa y rojo, y la invocación de los ángeles Haniel y Rafael. Este retorno no solo busca que la persona vuelva físicamente, sino que lo haga con amor genuino y deseos de reconstruir la relación. Incluye un trabajo de limpieza de influencias externas que puedan haber causado la separación.",
+                imagen: "img/retorno-pareja.jpeg",
+            },
+            {
+                id: 7,
+                nombre: "Limpias y Protección",
+                descripcion: "Ritual de limpieza espiritual profunda para eliminar energías negativas, mal de ojo, envidias y bloqueos que afectan tu vida amorosa y personal. Se realiza con sahumerios, hierbas sagradas (ruda, romero, albahaca) y baños de descarga. Además, se coloca un sello de protección energética con símbolos cabalísticos para blindar tu aura contra futuras agresiones. Ideal para quienes se sienten cansados, con mala suerte en el amor o rodeados de personas tóxicas. Renueva tu energía y abre paso a lo positivo.",
+                imagen: "img/limpias.jpg",
+            },
+            {
+                id: 8,
+                nombre: "Alejamiento",
+                descripcion: "Hechizo de alejamiento para separar a personas que interfieren negativamente en tu relación o en tu vida. Ya sea una expareja que no suelta, un amigo o familiar tóxico, o un rival amoroso. Este ritual utiliza la energía del fuego y el viento para disolver los lazos que no convienen, siempre respetando el libre albedrío y sin causar daño. Se trabaja con velas negras y blancas, pimienta y sal gruesa para cortar amarras indeseadas y devolver a cada quien a su camino. Recupera la paz y la armonía en tu hogar.",
+                imagen: "img/alejamiento.jpeg",
+            }
+        ];
+
+        // Cargar productos dinámicamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const productosContainer = document.getElementById('productos-container');
+            
+            productos.forEach(producto => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <img class="product-image" src="${producto.imagen}" alt="${producto.nombre}" onerror="this.src='https://via.placeholder.com/300x180?text=Imagen+no+disponible'">
+                    <h3>${producto.nombre}</h3>
+                    <p class="product-description">${producto.descripcion}</p>
+                    <button class="product-button" onclick="contactarPorProducto('${producto.nombre}')">
+                        Consultar sobre este servicio
+                    </button>
+                `;
+                productosContainer.appendChild(productCard);
+            });
+
+            // Inicializar slider de videos
+            initVideoSlider();
+            
+            // Inicializar slider de testimonios
+            initTestimonialSlider();
+            
+            // Ajustar altura del header dinámicamente
+            ajustarHeaderHeight();
+            window.addEventListener('resize', ajustarHeaderHeight);
+        });
+
+        // Función para ajustar la variable CSS de altura del header
+        function ajustarHeaderHeight() {
+            const header = document.querySelector('header');
+            if (header) {
+                const height = header.offsetHeight;
+                document.documentElement.style.setProperty('--header-height', height + 'px');
+            }
+        }
+
+        // Función para contactar por WhatsApp sobre un producto específico
+        function contactarPorProducto(nombreProducto) {
+            const mensaje = `Hola Templo Cabalístico De Amor, me interesa el servicio de ${nombreProducto}. ¿Podrían darme más información?`;
+            const url = `https://wa.me/573223964971?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+
+        // Video Slider
+        function initVideoSlider() {
+            const videos = document.querySelectorAll('#videoContainer video');
+            const dots = document.querySelectorAll('#videoControls .video-dot');
+            let currentIndex = 0;
+            let interval;
+            
+            function showVideo(index) {
+                videos.forEach(video => {
+                    video.classList.remove('active');
+                    video.pause();
+                });
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                videos[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentIndex = index;
+                
+                // Intentar reproducir el video activo (requiere interacción del usuario)
+                videos[index].play().catch(e => console.log('Autoplay bloqueado:', e));
+            }
+            
+            // Event listeners para los dots
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => {
+                    showVideo(idx);
+                    // Reiniciar intervalo
+                    clearInterval(interval);
+                    interval = setInterval(nextVideo, 5000);
+                });
+            });
+            
+            function nextVideo() {
+                let next = currentIndex + 1;
+                if (next >= videos.length) next = 0;
+                showVideo(next);
+            }
+            
+            // Cambio automático cada 5 segundos
+            interval = setInterval(nextVideo, 5000);
+            
+            // Pausar al pasar el mouse
+            const slider = document.querySelector('.video-slider');
+            slider.addEventListener('mouseenter', () => clearInterval(interval));
+            slider.addEventListener('mouseleave', () => {
+                interval = setInterval(nextVideo, 5000);
+            });
+            
+            // Mostrar el primero
+            showVideo(0);
+        }
+
+        // Slider de testimonios
+        function initTestimonialSlider() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.testimonials-slider .slider-dot');
+            let currentIndex = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach(t => t.classList.remove('active'));
+                dots.forEach(d => d.classList.remove('active'));
+                
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => showTestimonial(idx));
+            });
+            
+            setInterval(() => {
+                let next = currentIndex + 1;
+                if (next >= testimonials.length) next = 0;
+                showTestimonial(next);
+            }, 5000);
+        }
+
+        // Efecto de desplazamiento suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        function checkScroll() {
+            const elements = document.querySelectorAll('.product-card, .testimonial, .section-title');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Aplicar estilos iniciales para animación
+        document.querySelectorAll('.product-card, .testimonial, .section-title').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+    </script>
+</body>
+</html>
